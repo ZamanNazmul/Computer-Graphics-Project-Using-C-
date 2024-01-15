@@ -1,0 +1,36 @@
+
+initgraph(&g, &d, "c:\\turboc3\\bgi") - Initializes the graphics system.
+
+setcolor(color) - Sets the current drawing color.
+
+setfillstyle(pattern, color) - Sets the current fill pattern and fill color.
+
+ellipse(x, y, start_angle, end_angle, x_radius, y_radius) - Draws an ellipse.
+
+floodfill(x, y, border_color) - Performs a flood fill operation to fill a closed area with a specified color.
+
+line(x1, y1, x2, y2) - Draws a line.
+
+arc(x, y, start_angle, end_angle, radius) - Draws an arc.
+
+clearviewport() - Clears the graphics viewport.
+
+bar(left, top, right, bottom) - Draws a filled rectangle.
+
+rectangle(left, top, right, bottom) - Draws a rectangle.
+
+pieslice(x, y, start_angle, end_angle, radius) - Draws a pie slice (a filled portion of a circle).
+
+sector(x, y, start_angle, end_angle, x_radius, y_radius) - Draws a sector (a filled portion of an ellipse).
+
+getmaxx() and getmaxy() - Retrieve the maximum coordinates of the graphics screen.
+
+delay(ms) - Introduces a delay in milliseconds.
+
+getch() - Waits for a key press.
+
+These functions are specific to the BGI graphics library, and they are used to create graphics and animations in the code. Keep in mind that BGI is a DOS-based graphics library and may not be supported on modern systems. You might need to use alternative graphics libraries or frameworks for modern development environments.
+
+
+
+

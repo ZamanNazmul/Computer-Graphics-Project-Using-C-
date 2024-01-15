@@ -1,0 +1,390 @@
+
+                      LAB 1:
+#include<graphics.h>
+#include<conio.h>
+int main()
+{
+    int gd= DETECT,gm;
+    initgraph(&gd,&gm,"");
+
+    // Simple line different angle
+    //line(100,100,300,100); //horizontal
+    //line(100,100,200,280); //tan60
+    //line(100,100,300,250); // tan 45
+    //line(100,100,270,200); // tan 30
+    //line(100,100,100,300); // vertical
+
+
+
+    // flag
+    //int x = getmaxx()/2;
+    //int y = getmaxx()/2;
+    //circle(x,y,50);
+    //line(x-150,y-100,x+150,y-100);
+   // line(x+150,y-100,x+150,y+100);
+    //line(x+150,y+100,x-150,y+100);
+   // line(x-150,y+100,x-150,y-100);
+
+
+
+
+    //smiling face
+  // circle(300,200,150);
+   //circle(230,158,30);
+  // circle(370,158,30);
+  // arc(300,200,201,340,105);
+
+
+
+
+    getch();
+    closegraph();
+}
+
+
+
+
+
+					LAB 3 : 
+
+
+
+    //ellipse(100,100,0,360,50,25);
+
+    //face with 2 eyes 
+   //fillellipse(100,100,50,25);
+    circle(300,220,150);
+    fillellipse(220,170,30,50);
+    fillellipse(380,170,30,50);
+
+// Triangle
+ int point[]=
+{320,150,420,300,250,300,320,150};
+    drawpoly(4,point);
+
+//Hexa 
+
+int hex[14] = {400,50,450,50,500,100,450,150,400,150,350,100,400,50};
+fillpoly(7,hex);
+
+
+
+//face with 2 yes and nose and sad smile
+circle (300,220,150);
+fillellipse(220,170,30,50);
+fillellipse(220,170,30,50);
+int point [] = {300,180,360,260,250,260,300,180};
+fillploy(4,point);
+arc(300,340,20,160,70);
+
+
+
+
+
+		LAB 4 Hut with color  and smile face with color 
+
+
+1/HUT
+
+#include<graphics.h>
+#include<conio.h>
+main()
+{
+
+int x,y, d=DETECT, m;
+
+initgraph (&d,&m, "");
+
+// All this are hut code part
+    setcolor(WHITE);
+    rectangle(150,180,250,300);
+    rectangle(250,180,420,300);
+    rectangle(180,250,220,300);
+
+    line(200,100,150,180);
+    line(200,100,250,180);
+    line(200,100,370,100);
+    line(370,100,420,180);
+
+
+    setfillstyle(SOLID_FILL, BROWN);
+    floodfill(152, 182, WHITE);
+    floodfill(252, 182, WHITE);
+    setfillstyle(SLASH_FILL, BLUE);
+    floodfill(182, 252, WHITE);
+    setfillstyle(HATCH_FILL, GREEN);
+    floodfill(200, 105, WHITE);
+    floodfill(210, 105, WHITE);
+
+
+getch();
+closegraph();
+return 0;
+}
+
+}
+
+
+
+  
+
+
+
+//2 smile face with color 
+
+#include<graphics.h>
+#include<conio.h>
+main()
+{
+int d, m,x,y,  points[]={320,240,350,280,290,280,320,240};
+d=DETECT;
+initgraph (&d,&m, "");
+
+x= getmaxx()/2;
+y= getmaxy()/2;
+
+setcolor(WHITE);
+circle(x,y,150);
+ setfillstyle(SOLID_FILL,YELLOW);
+ floodfill(x+2,y+2, WHITE);
+
+    setcolor(RED);
+    drawpoly(4,points);
+    setfillstyle(SOLID_FILL,RED);
+    fillpoly(4,points);
+
+
+ellipse(x-50,y-30,0,360,20,40);
+setfillstyle(SOLID_FILL,BLACK);
+fillellipse(x-50,y-30,20,40);
+
+ellipse(x+50,y-30,0,360,20,40);
+fillellipse(x+50,y-30,20,40);
+arc(320,300,180,360,50);
+arc(320,350,180,360,20);
+
+
+getch();
+
+}
+
+
+
+
+
+
+
+
+
+
+LAB 5 
+
+
+
+
+
+
+
+
+
+
+
+
+				Lab 7
+
+int main()
+{
+int gd=DETECT,gm,i;
+initgraph(&gd,&gm,(char*)"");
+//for moving circle from left to right,the following loop works
+for(i=50;i<=getmaxx();i++)
+{
+setcolor(3);
+setfillstyle(SOLID_FILL,9);
+circle(50+i,50,50);
+floodfill(52+i,52,3);
+delay(20);
+cleardevice();
+}
+//for moving circle from right to left, the following loop works
+for(i=getmaxx();i>=0;i--)
+{
+setcolor(3);
+
+setfillstyle(SOLID_FILL,9);
+circle(i,50,50);
+floodfill(i+2,52,3);
+delay(20);
+cleardevice();
+}
+//for moving circle from top to bottom, the following loop works
+for(i=50;i<=getmaxy();i++)
+{
+setcolor(3);
+setfillstyle(SOLID_FILL,9);
+circle(50,i,50);
+floodfill(52,i+2,3);
+delay(20);
+cleardevice();
+}
+//for moving circle from bottom to top, the following loop works
+for(i=getmaxy();i>=0;i--)
+{
+setcolor(3);
+setfillstyle(SOLID_FILL,9);
+circle(50,i,50);
+floodfill(52,i+2,3);
+delay(20);
+cleardevice();
+}
+//for moving circle in diagonal direction, the following loop works
+for(i=50;i<=getmaxx();i++)
+{
+setcolor(3);
+setfillstyle(SOLID_FILL,9);
+circle(i,i,50);
+floodfill(i+2,i+2,3);
+delay(20);
+cleardevice();
+}
+//for moving circle in reverse diagonal direction, the following loop works
+for(i=getmaxx();i>=0;i--)
+{
+setcolor(3);
+setfillstyle(SOLID_FILL,9);
+circle(i,i,50);
+floodfill(i+2,i+2,3);
+delay(20);
+
+cleardevice();
+}
+getch();
+}
+
+
+
+
+
+
+
+
+
+										Lab 8
+
+//Stick man
+int main()
+{
+int gd=DETECT,gm,i;
+initgraph(&gd,&gm,(char*)"");
+//creation of man object by using circle,line.
+setcolor(7);
+setfillstyle(SOLID_FILL,10);
+circle(50,50,30); // drawing head
+floodfill(52,52,7);
+setcolor(13);
+line(50,80,50,200); //drawing body
+line(50,110,20,140); //left hand
+line(50,110,80,140); //right hand
+line(50,200,20,230); //left leg
+line(50,200,80,230); //right leg
+// for loop for moving man
+for(i=50;i<=getmaxx();i++)
+{
+setcolor(7);
+setfillstyle(SOLID_FILL,10);
+circle(i,50,30); // drawing head
+floodfill(i+2,52,7);
+setcolor(13);
+line(i,80,i,200); //drawing body
+line(i,110,i-30,140); //left hand
+line(i,110,i+30,140); //right hand
+line(i,200,i-30,230); //left leg
+line(i,200,i+30,230); //right leg
+cleardevice();
+delay(10);
+}
+//doing simple animation using translation
+for(i=50;i<=getmaxx()/2;i++)
+{
+setcolor(7);
+setfillstyle(SOLID_FILL,10);
+circle(i,50,30); // drawing head
+floodfill(i+2,52,7);
+setcolor(13);
+line(i,80,i,200); //drawing body
+line(i,110,i-30,140); //left hand
+
+line(i,110,i+30,140); //right hand
+line(i,200,i-30,230); //left leg
+line(i,200,i+30,230); //right leg
+cleardevice();
+delay(10);
+}
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+//Moving man
+#include&lt;stdio.h&gt;
+#include&lt;dos.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;graphics.h&gt;
+#include&lt;stdlib.h&gt;
+Int main()
+{
+int gd = DETECT, gm = DETECT, c = -200, i = 0, x = 40, l = 15, h = 15, ht = 0;
+initgraph(&gd, &gm, (char *)"");
+cleardevice();
+setcolor(BROWN);
+line(0, 201, 600, 201);
+cont:
+while (!kbhit()) {
+setcolor(4);
+ellipse(x, 100, 0, 180, 50, 30);
+line(x - 50, 100, x + 50, 100);
+line(x, 100, x, 150);
+circle(x - 20, 115, 15);
+line(x - 20, 130, x - 20, 175);
+line(x - 20, 175, x - 20 - l, 200);
+line(x - 20, 175, x - 20 + l, 200);
+line(x - 20, 140, x, 150);
+line(x - 20, 140, x - 20 - h, 160);
+setcolor(0);
+delay(50);
+ellipse(x, 100, 0, 180, 50, 30);
+line(x - 50, 100, x + 50, 100);
+line(x, 100, x, 150);
+circle(x - 20, 115, 15);
+line(x - 20, 130, x - 20, 175);
+line(x - 20, 175, x - 20 - l, 200);
+line(x - 20, 175, x - 20 + l, 200);
+line(x - 20, 140, x, 150);
+
+line(x - 20, 140, x - 20 - h, 160);
+line(x + 50, 100, x + 50, 200);
+x++;
+l--;
+if (l == -15)
+l = 15;
+if (ht == 1)
+h++;
+else
+h--;
+if (h == 15)
+ht = 0;
+else if (h == -15)
+ht = 1; }
+if (getch() == &#39; &#39;) {
+while (!kbhit());
+getch();
+goto cont;
+}
+}
